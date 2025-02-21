@@ -1,9 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Recipe Book</title>
-</head>
-<body>
-    <h1>Hello world</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Recipe Book {% endblock %}
+
+{% block content %}
+    <ul>
+        <h1>Recipes</h1>
+        {% for recipe in recipes %}
+            <li><a href="{{ recipe.link }}">{{ recipe.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
