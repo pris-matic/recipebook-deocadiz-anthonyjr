@@ -5,9 +5,9 @@
 
 {% block content %}
     <ul>
-        <h1>Recipes</h1>
-        {% for recipe in recipes %}
-            <li><a href="{{ recipe.link }}">{{ recipe.name }}</a></li>
+        <h1> {{ name }}</h1>
+        {% for ingredient in ingredients %}
+            <li>{{ ingredient.name }} - {{ ingredient.quantity }}</li>
         {% endfor %}
     </ul>
 {% endblock %}
