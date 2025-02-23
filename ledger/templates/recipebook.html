@@ -4,8 +4,9 @@
 {% block title %} Recipe Book {% endblock %}
 
 {% block content %}
+    {{ block.super }}
     <ul>
-        <h1>Recipes</h1>
+        <h2>Recipes</h2>
         {% for recipe in recipes %}
             <li><a href="{{ recipe.link }}">{{ recipe.name }}</a></li>
         {% endfor %}
