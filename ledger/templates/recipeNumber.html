@@ -4,8 +4,9 @@
 {% block title %} Recipe Book {% endblock %}
 
 {% block content %}
-    <ul>
-        <h1> {{ name }}</h1>
+    {{ block.super }}
+    <ul>    
+        <h2>{{ name }}</h2>
         {% for ingredient in ingredients %}
             <li>{{ ingredient.name }} - {{ ingredient.quantity }}</li>
         {% endfor %}
