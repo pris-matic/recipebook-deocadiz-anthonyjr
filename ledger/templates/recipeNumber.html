@@ -6,11 +6,11 @@
 {% block content %}
     {{ block.super }}
     <ul>    
-        <h2>Name: {{ name }}</h2>
+        <h2>Name: {{ recipe.name }}</h2>
         <p>Ingredients:</p>
-        {% for ingredient in ingredients %}
-            <li>{{ ingredient.name }} - {{ ingredient.quantity }}</li>
+        {% for item in ingredients %}
+            <li>{{ item.ingredient.name }} - {{ item.quantity }}</li>
         {% endfor %}
     </ul>
-    <a href="/recipes/list">Back to Recipe List</a>
+    <a href="{% url 'ledger:recipebook' %}">Back to Recipe List</a>
 {% endblock %}
