@@ -6,6 +6,7 @@
     <ul>    
         <h2>Name: {{ recipe.name }}</h2>
         <h4>Author: {{ recipe.author }}</h4>
+        <p>Created on: {{ recipe.createdOn }} | Last updated on: {{ recipe.updatedOn }} </p>
         <p>Ingredients:</p>
         {% for item in ingredients %}
             <li>{{ item.ingredient.name }} - {{ item.quantity }}</li>
