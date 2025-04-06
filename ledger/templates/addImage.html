@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {{ block.super }}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ image.as_p }}
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}
