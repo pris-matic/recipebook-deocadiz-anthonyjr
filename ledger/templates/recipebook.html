@@ -4,9 +4,12 @@
 {% block content %}
     {{ block.super }}
     <ul>
-        <h2>Recipes</h2>
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Recipes</h2>
+            <a href="{% url 'ledger:addRecipe' %}" class="btn btn-primary">Add Recipe</a>
+        </div>
         {% for item in recipes %}
-            <li><a href="{{ item.get_absolute_url }}">{{ item.name }}</a></li>
+            <li><a href="{{ item.get_absolute_url }}">{{ item.name }}</a> by {{ item.author }}</li>
         {% endfor %}
     </ul>
 {% endblock %}
