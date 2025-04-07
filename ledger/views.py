@@ -5,8 +5,6 @@ from .forms import RecipeForm, RecipeIngredientForm, IngredientForm, RecipeImage
 from django.contrib.auth.decorators import login_required
 from django.db import IntegrityError
 
-# Create your views here.
-
 def homepage(request):
     return render(request,'homepage.html')
 
