@@ -90,6 +90,7 @@ def addImage(request,num):
             recipe = Recipe.objects.get(id=num)
             image.recipe = recipe
             image.save()
+            recipe.save()
             return redirect('ledger:getRecipe', num)
     else:
         imageForm = RecipeImageForm()
