@@ -50,7 +50,11 @@ def addRecipe(request):
 
         if recipeIngredientForm.is_valid():
             try:
-                recipeIngredientForm.save()
+                recipeIngredient = recipeIngredientForm.save(commit=False)
+                recipe = recipeIngredient.recipe
+
+                recipeIngredient.save()
+                recipe.save()
                 return redirect('ledger:recipebook')
             except IntegrityError:
                 recipeIngredientForm.add_error(None, 'Recipe Ingredient Already Exists')
